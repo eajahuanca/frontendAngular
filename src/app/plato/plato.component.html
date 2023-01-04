@@ -48,10 +48,12 @@
                                       [showInfo]="true"
                                       [showNavigationButtons]="true">
                                   </dxo-pager>
-                                  <dxi-column dataField="nombre" [width]="'30%'" caption="NOMBRE PLATO"></dxi-column>
-                                  <dxi-column dataField="color" [width]="'50%'" caption="COLOR"></dxi-column>
+                                  <dxi-column dataField="nombre" [width]="'50%'" caption="NOMBRE PLATO"></dxi-column>
+                                  <dxi-column dataField="color" [width]="'20%'" caption="COLOR"></dxi-column>
                                   <dxi-column dataField="precio" [width]="'20%'" caption="PRECIO"></dxi-column>
                                   <dxi-column dataField="fecha_inicio" [width]="'20%'" caption="F. INICIO ACT."></dxi-column>
+                                  <dxi-column dataField="oferta" [width]="'20%'" caption="OFERTA"></dxi-column>
+                                  <dxi-column dataField="campos" [width]="'20%'" caption="CAMPOS"></dxi-column>
                               </dx-data-grid>
                           </div>
                       </div>
@@ -59,7 +61,7 @@
               </div>
           </div>
           <div class="col-md-12 px-5">
-              <code>Nota: Para editar, eliminar se seleccionar el registro.</code>
+              <code style="color:red">Nota: Para editar, eliminar se seleccionar el registro.</code>
           </div>
       </div>
 

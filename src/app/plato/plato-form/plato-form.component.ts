@@ -22,6 +22,7 @@ export class PlatoFormComponent implements OnInit {
 	public formFormulario: FormGroup;
 	public pk: number = 0;
 	public labelAlert: string = 'registrar';
+  public dataOfertas = ["SI", "NO"];
 	matcher = new ValidatorService();
 
 	constructor(private formBuilder: FormBuilder,
