@@ -92,6 +92,10 @@
               "browserTarget": "frontAngular:build:development"
             }
           },
+          "options": {
+            "browserTarget": "frontAngular:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

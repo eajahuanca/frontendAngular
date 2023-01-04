@@ -7,7 +7,8 @@ import { Plato } from '../app/modelo/plato.model';
   providedIn: 'root'
 })
 export class ServiceService {
-    private url: string = 'http://localhost:8000/api/plato/plato/';
+    //private url: string = 'http://localhost:8000/api/plato/plato/';
+    private url: string = 'api/plato/plato/';
 
     constructor(private http: HttpClient) {}
 
