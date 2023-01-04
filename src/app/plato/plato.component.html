@@ -1,0 +1,69 @@
+<main id="main" class="main">
+  <section class="section faq">
+      <div class="row">
+          <div class="col-md-6">
+              <app-plato-form *ngIf="showFormulario"
+                      (mostrarformulario)="showViewForm($event)"
+                      [tipo]="accionTipo"
+                      [pkdata]="pkData"
+                      [objectodata]="dataSelectGrid"></app-plato-form>
+              <div class="row flex" *ngIf="!showFormulario">
+                  <div class="col-md-12 px-4 py-3">
+                      <button (click)="accionclickEliminar()" title="Eliminar Registro"> Eliminar</button>
+                      <button (click)="accionclickEditar()"  title="Editar Registro"> Editar</button>
+                      <button (click)="accionclickAdicionar()" title="Adicionar Nuevo"> Nuevo</button>
+                  </div>
+              </div>
+              <div class="row" *ngIf="!showFormulario">
+                  <div class="col-md-12">
+                      <div class="card basic">
+                          <div class="card-body mt-2">
+                              <dx-data-grid
+                                  #gridRegistro
+                                  id="dataGridHeight"
+                                  [dataSource]="dataRegistro"
+                                  [allowColumnReordering]="true"
+                                  [hoverStateEnabled]="true"
+                                  [selectedRowKeys]="[]"
+                                  [showBorders]="true"
+                                  [showRowLines]="true"
+                                  [height]="600"
+                                  keyExpr="id"
+                                  (onRowClick)="onRowClickGrid($event)">
+                                  <dxo-selection mode="single"></dxo-selection>
+                                  <dxo-search-panel
+                                      [visible]="true"
+                                      [width]="350"
+                                      placeholder="Buscar...">
+                                  </dxo-search-panel>
+                                  <dxo-header-filter [visible]="true"></dxo-header-filter>
+                                  <dxo-filter-row [visible]="true"></dxo-filter-row>
+                                  <dxo-group-panel [visible]="true"></dxo-group-panel>
+                                  <dxo-paging [pageSize]="10"> </dxo-paging>
+                                  <dxo-scrolling columnRenderingMode="virtual"></dxo-scrolling>
+                                  <dxo-pager [visible]="true"
+                                      [allowedPageSizes]="allowedPageSizes"
+                                      [displayMode]="'full'"
+                                      [showPageSizeSelector]="true"
+                                      [showInfo]="true"
+                                      [showNavigationButtons]="true">
+                                  </dxo-pager>
+                                  <dxi-column dataField="nombre" [width]="'30%'" caption="NOMBRE PLATO"></dxi-column>
+                                  <dxi-column dataField="color" [width]="'50%'" caption="COLOR"></dxi-column>
+                                  <dxi-column dataField="precio" [width]="'20%'" caption="PRECIO"></dxi-column>
+                                  <dxi-column dataField="fecha_inicio" [width]="'20%'" caption="F. INICIO ACT."></dxi-column>
+                              </dx-data-grid>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12 px-5">
+              <code>Nota: Para editar, eliminar se seleccionar el registro.</code>
+          </div>
+      </div>
+
+  </section>
+</main>
+
+
